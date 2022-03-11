@@ -5,7 +5,7 @@ import groupCssMediaQueries from "gulp-group-css-media-queries";
 import sassPlugin from "gulp-sass";
 import sassCompile from "sass";
 import sassGlob from "gulp-sass-glob";
-import webpCSS from "gulp-webp-css"; // add webp in gtml
+import webpCSS from "gulp-webp-css"; // add webp in html
 
 const sass = sassPlugin(sassCompile);
 
@@ -26,11 +26,11 @@ export const scss = () => {
 		.pipe(autoprefixer())
 		.pipe(shorthand())
 		.pipe(groupCssMediaQueries())
-		.pipe(app.plugins.size({ title: "main.css" }))
+		// .pipe(app.plugins.size({ title: "main.css" }))
 		.pipe(app.gulp.dest(app.path.build.css, { sourcemaps: app.plugins.isDev }))
 		.pipe(app.plugins.rename({ suffix: ".min" }))
 		.pipe(csso())
-		.pipe(app.plugins.size({ title: "main.min.css" }))
+		// .pipe(app.plugins.size({ title: "main.min.css" }))
 		.pipe(app.gulp.dest(app.path.build.css, { sourcemaps: app.plugins.isDev }))
 		.pipe(app.plugins.browsersync.stream());
 };

@@ -31,7 +31,7 @@ export const path = {
     fonts: `${srcFolder}/assets/font/**/*.{eot,ttf,otf,otc,tts,woff,woff2,svg}`,
 		jsLibs: `${srcFolder}/js/libs/**/*.js`,
 	},
-	clean: buildFolder,
+	clear: buildFolder,
 	buildFolder: buildFolder,
 	srcFolder: srcFolder,
 	rootFolder: rootFolder,

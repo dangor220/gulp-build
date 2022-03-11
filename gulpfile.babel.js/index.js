@@ -13,7 +13,7 @@ global.app = {
 
 // Import tasks
 
-import { reset } from "./tasks/reset.js";
+import { clear } from "./tasks/clear.js";
 import { html } from "./tasks/html.js";
 import { server } from "./tasks/server.js";
 import { scss } from "./tasks/scss.js";
@@ -37,7 +37,7 @@ function watcher() {
 const mainTasks = gulp.parallel(html, scss, js, jsLibs, images, font);
 
 
-const build = gulp.series(reset, mainTasks);
+const build = gulp.series(clear, mainTasks);
 const dev = gulp.series(build, gulp.parallel(watcher, server));
 
 
